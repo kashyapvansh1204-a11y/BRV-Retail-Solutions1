@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRV Retail Solutions</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>BRV Retail Solutions</h1>
+    <p>Data • Photos • Excel</p>
+  </header>
+
+  <main>
+    <section class="cards">
+      <button class="card" onclick="showSection('data')">
+        <span class="icon">📊</span>
+        <strong>Data</strong>
+        <small>Enter and save records</small>
+      </button>
+      <button class="card" onclick="showSection('photos')">
+        <span class="icon">📸</span>
+        <strong>Photos</strong>
+        <small>Upload and view photos</small>
+      </button>
+      <button class="card" onclick="showSection('excel')">
+        <span class="icon">📁</span>
+        <strong>Excel Data</strong>
+        <small>Keep your Excel files</small>
+      </button>
+    </section>
+
+    <section id="data" class="panel hidden">
+      <div class="panel-head"><h2>Data</h2><button onclick="goHome()">← Home</button></div>
+      <form id="dataForm">
+        <input id="name" placeholder="Name / Item" required>
+        <input id="details" placeholder="Details">
+        <button type="submit">Save Data</button>
+      </form>
+      <div id="dataList"></div>
+    </section>
+
+    <section id="photos" class="panel hidden">
+      <div class="panel-head"><h2>Photos</h2><button onclick="goHome()">← Home</button></div>
+      <label class="upload">
+        📸 Choose Photos
+        <input id="photoInput" type="file" accept="image/*" multiple>
+      </label>
+      <div id="photoGrid" class="photo-grid"></div>
+    </section>
+
+    <section id="excel" class="panel hidden">
+      <div class="panel-head"><h2>Excel Data</h2><button onclick="goHome()">← Home</button></div>
+      <label class="upload">
+        📁 Choose Excel/CSV File
+        <input id="excelInput" type="file" accept=".xlsx,.xls,.csv">
+      </label>
+      <div id="fileInfo" class="file-info">No file selected.</div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
